@@ -269,17 +269,7 @@ og alle de påfølgende linjene i fila skal følge samme mønster, f.eks
 13/2/2017 18:10:22,69.681252,18.975937,62.70,22.00,14.00
 ```
 
+For å se at dere har en fil på riktig format kan dere prøve å importere den i
+Excel! 
+
 Lykke til!! 
-
-```
-
-
-
-void setup() {
-
-}
-
-void loop() {
-
-}
-```
