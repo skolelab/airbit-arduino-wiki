@@ -62,8 +62,8 @@ begge til datamaskinen når Arduinoen er koblet til.
 ```c
 #include "DHT.h"
 
-static const int DHT_PIN = 2
-DHT dht(DHTPIN, DHT11);
+static const int DHT_PIN = 2;
+DHT dht(DHT_PIN, DHT11);
 
 void setup(){
   Serial.begin(9600);    
