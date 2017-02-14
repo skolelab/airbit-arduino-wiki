@@ -135,7 +135,7 @@ void loop() {
 Denne er litt vanskeligere å teste siden dere må utendørs (evt. utfor vinduet),
 så ta det en dag det ikke regner eller snør så mye. For å kommunisere med
 GPS-modulen trenger vi et bibliotek (slik at vi ikke trenger å skrive så mye
-kode). Dette finner dere [her](arduiniana.org/libraries/tinygpsplus/) og må
+kode). Dette finner dere [her](http://arduiniana.org/libraries/tinygpsplus/) og må
 installeres manuelt. Dere trenger også et bibliotek som heter "Adafruit unified
 sensor", men dette finner dere på vanlig måte i Arduino IDE-en. 
 
