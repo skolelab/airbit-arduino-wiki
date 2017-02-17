@@ -151,7 +151,7 @@ TinyGPSPlus gps;
 SoftwareSerial ss(RX_PIN, TX_PIN);
 
 void setup() {
-
+  ss.begin(GPSBaud);
 }
 
 void loop() {
