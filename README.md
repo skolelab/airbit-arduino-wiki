@@ -103,29 +103,29 @@ float dustDensity = 0;
 
 
 void setup() {
-  pinMode(DUST_POWER_PIN, OUTPUT);
+  pinMode(DUST_LED_PIN, OUTPUT);
   pinMode(DUST_PIN, INPUT);
 }
 
 void loop() {
-    
-    digitalWrite(DUST_POWER_PIN, LOW);  // power on the LED inside the dust
+
+    digitalWrite(DUST_LED_PIN, LOW);  // power on the LED inside the dust
                                         // sensor
     delayMicroseconds(samplingTime);
     voMeasured = analogRead(DUST_PIN);  // read the dust value
-    
+
     delayMicroseconds(deltaTime);
-    digitalWrite(DUST_POWER_PIN,HIGH); // turn the LED off
+    digitalWrite(DUST_LED_PIN,HIGH); // turn the LED off
     delayMicroseconds(sleepTime);
 
     calcVoltage = voMeasured * (5.0 / 1024);
     dustDensity = (0.17 * calcVoltage - 0.0999999) * 1000;
-    
+
     if (dustDensity < 0) {
       dustDensity = 0;
     }
-    
-    Serial.print("Dust density (ug/m3):") 
+
+    Serial.print("Dust density (ug/m3):");
     Serial.print(dustDensity);
     Serial.print("\n");
 }
@@ -160,7 +160,7 @@ void loop() {
             if(gps.location.isValid()){
                 
                 // Date
-                Serial.print("Date: ")
+                Serial.print("Date: ");
                 Serial.print(gps.date.day());
                 Serial.print("/");
                 Serial.print(gps.date.month());
@@ -182,21 +182,21 @@ void loop() {
                  char lat[15];
                  dtostrf(gps.location.lat(), 3, 6, lat);
                  
-                 Serial.print(" Latitude: ")
+                 Serial.print(" Latitude: ");
                  Serial.print(lat);
                  Serial.print(",");
                  
                  // long
                  char lng[15];
                  dtostrf(gps.location.lng(), 3, 6, lng);
-                 Serial.print(" Longitude: ")
+                 Serial.print(" Longitude: ");
                  Serial.print(lng);
                  Serial.print(",");
 
 
                 
             } else { 
-                Serial.print("Bad GPS signal.") 
+                Serial.print("Bad GPS signal."); 
             }
         }
     }
@@ -214,7 +214,7 @@ void loop() {
 static const int SD_PIN = 10;
 File file;
 
-static const int i = 0;
+int i = 0;
 
 void setup() {
     pinMode(SD_PIN, OUTPUT);
