@@ -242,6 +242,7 @@ void loop() {
     file.print("Linje ");
     file.print(i);
     file.print("\n"); 
+    file.flush();
 
     i = i + 1;
 
