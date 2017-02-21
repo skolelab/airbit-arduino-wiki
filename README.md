@@ -105,6 +105,7 @@ float dustDensity = 0;
 void setup() {
   pinMode(DUST_LED_PIN, OUTPUT);
   pinMode(DUST_PIN, INPUT);
+  Serial.begin(9600);    
 }
 
 void loop() {
@@ -152,6 +153,7 @@ SoftwareSerial ss(RX_PIN, TX_PIN);
 
 void setup() {
   ss.begin(GPSBaud);
+  Serial.begin(9600);    
 }
 
 void loop() {
@@ -198,6 +200,7 @@ void loop() {
             } else { 
                 Serial.print("Bad GPS signal."); 
             }
+            Serial.print("\n")
         }
     }
 
